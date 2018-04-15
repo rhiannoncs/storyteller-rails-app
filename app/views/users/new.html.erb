@@ -1,12 +1,15 @@
 <%= form_for @user do |f| %>
 	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<%= f.text_field :name %><%= tag.br%>
 	<%= f.label :email %>
-	<%= f.text_field :email %>
+	<%= f.text_field :email %><%= tag.br%>
 	<%= f.label :password %>
-	<%= f.password_field :password %>
-	<%= f.label :password_confirmation %>
-	<%= f.password_field :password_confirmation %>
+	<%= f.password_field :password %><%= tag.br%>
+	<%= f.label :password_confirmation, "Confirm Password" %>
+	<%= f.password_field :password_confirmation %><%= tag.br%>
 
-	<%= f.submit %>
+	<%= f.submit "Submit" %>
 <% end %>
+
+<%= content_tag(:p, "Already a user?") %> <%= link_to "Log In", login_path %>
+

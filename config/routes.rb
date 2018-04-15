@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root 'application#welcome'
   get '/users/:id/dashboard', to: 'users#dashboard', as: :dashboard
   resources :users, only: [:new, :create, :show, :edit, :update]
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
 end
