@@ -5,11 +5,12 @@ class SessionsController < ApplicationController
 
 	def create
 		@user = User.find_by(email: params[:email])
-		if @user.authenticate(params[:password])
+		if @user && @user.authenticate(params[:password])
 			session[:user_id] = @user.id
 			redirect_to dashboard_path(@user)
 		else
-			redirect_to login_path
+			flash[:error] = "Invalid email/password combination."
+			render :new
 		end
 	end
 
