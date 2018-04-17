@@ -1,0 +1,17 @@
+<%= form_for @story do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %><%= tag.br%>
+	<%= f.label :genre %>
+	<%= f.text_field :genre %><%= tag.br %>
+	<%= f.label :team %>
+	<%= f.collection_select(:team_id, Team.all, :id, :name) %><%= tag.br %>
+	<%= f.label :description %>
+	<%= f.text_area :description %><%= tag.br %>
+	<%= f.label :privacy %><%= tag.br %>
+	<%= f.radio_button :public, 'true', :checked => true %>
+	<%= label :public_true, 'Public' %>
+	<%= f.radio_button :public, 'false' %>
+	<%= label :public_false, 'Team Members Only' %><%= tag.br %>
+
+	<%= f.submit %>
+<% end %>
