@@ -8,4 +8,8 @@ class Story < ApplicationRecord
 	def team_name
 		team.name
 	end
+
+	def team_members
+		team.users
+	end
 end

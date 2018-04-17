@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+	skip_before_action :verify_user, only: [:index, :show]
 
 	def index
 		@stories = Story.where(public: true)
@@ -19,6 +20,7 @@ class StoriesController < ApplicationController
 
 	def show
 		@story = Story.find(params[:id])
+		redirect_to root_path unless @story.team_members.include?(current_user) | @story.public
 	end
 
 	private
