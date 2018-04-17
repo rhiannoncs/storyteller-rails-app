@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	skip_before_action :verify_user, only: [:new, :create, :create_omniauth]
 
 	def new
 	end
