@@ -4,4 +4,8 @@ class Story < ApplicationRecord
 	has_many :users, through: :submissions
 
 	validates :title, presence: true
+
+	def team_name
+		team.name
+	end
 end
