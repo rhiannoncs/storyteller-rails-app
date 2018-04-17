@@ -1,0 +1,10 @@
+<%= content_tag(:h1, @story.title) %>
+<%= content_tag(:h3, "By: #{@story.team_name}") %>
+<%= content_tag(:h4, "Contributors:") %>
+<%= @story.users.each do |user| %>
+	<%= link_to user.name, user_path(user) %>
+	<%= tag.br %>
+<% end %>
+<%= @story.submissions.each do |s| %>
+	<%= content_tag(:p, s) %>
+<% end %>
