@@ -2,5 +2,6 @@
 	<%= content_tag(:h4, story.title) %>
 <% end %>
 <%= tag.br %>
+<%= content_tag(:p, story.genre) %><%= tag.br %>
 <%= content_tag(:p, story.description) %><%= tag.br %>
 <%= content_tag(:h5, "Team: #{story.team_name}") %><%= tag.br %>
