@@ -4,7 +4,7 @@
 	<%= f.label :genre %>
 	<%= f.text_field :genre %><%= tag.br %>
 	<%= f.label :team %>
-	<%= f.collection_select(:team_id, Team.all, :id, :name) %><%= tag.br %>
+	<%= f.collection_select(:team_id, Team.all, :id, :name, {:prompt => true}) %><%= tag.br %>
 	<%= f.label :description %>
 	<%= f.text_area :description %><%= tag.br %>
 	<%= f.label :privacy %><%= tag.br %>

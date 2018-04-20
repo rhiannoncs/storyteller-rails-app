@@ -1,14 +1,14 @@
 <%= content_tag(:h2, "Welcome, #{current_user.name}") %>
 
 <%= content_tag(:h3, "Your Stories") %>
-<%= render(partial: "stories/stories", collection: current_user.stories) || "You haven't contributed to any stories yet." %><%= tag.br %>
+<%= render(partial: "stories/story", collection: current_user.stories) || "You haven't contributed to any stories yet." %><%= tag.br %>
 <%= link_to "Start a New Story", new_story_path %><%= tag.br %>
 
 <%= link_to "View Writing Prompts", prompts_path %><%= tag.br %>
 <%= link_to "Submit a Prompt", new_prompt_path %><%= tag.br %>
 
 <%= content_tag(:h3, "Your Teams") %>
-<%= render(current_user.teams) || "You haven't joined any teams yet." %><%= tag.br %>
+<%= render @teams || "You haven't joined any teams yet." %><%= tag.br %>
 <%= link_to "Find a Team to Join", teams_path %><%= tag.br %>
 <%= link_to "Start a Team", new_team_path %><%= tag.br %>
 

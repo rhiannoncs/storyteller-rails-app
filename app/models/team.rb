@@ -4,4 +4,8 @@ class Team < ApplicationRecord
 	has_many :stories
 
 	validates :name, presence: true, uniqueness: true
+
+	def public_stories
+		stories.where(public: true)
+	end
 end

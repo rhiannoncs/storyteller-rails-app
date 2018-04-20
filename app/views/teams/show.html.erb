@@ -1,2 +1,6 @@
 <%= content_tag(:h2, @team.name) %>
-<%= team_stories %>
+<% @stories.each do |story| %>
+	<%= link_to story.title, story_path(story) %>
+	<%= tag.br %>
+<% end %>
+<%= join_team(@team) %>

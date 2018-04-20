@@ -1,0 +1,6 @@
+<%= link_to story_path(story.id) do %>
+	<%= content_tag(:h4, story.title) %>
+<% end %>
+<%= content_tag(:p, story.genre) %>
+<%= content_tag(:p, story.description) %>
+<%= content_tag(:h5, "Team: #{story.team_name}") %>

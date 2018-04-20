@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   resources :prompts, only: [:index, :new, :create]
 
   resources :teams, only: [:index, :new, :create, :show]
+
+  post '/join' => 'memberships#create'
+
 end

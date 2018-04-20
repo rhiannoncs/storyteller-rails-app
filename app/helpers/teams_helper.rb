@@ -1,14 +1,10 @@
 module TeamsHelper
 
-	def team_stories(team)
-		if team.users.include?(current_user)
-			stories = team.stories
+	def join_team(team)
+		if team.open
+			render(partial: 'memberships/join', locals: {team: team})
 		else
-			stories = team.stories.where(public: true)
-		end
-
-		stories.each do |story|
-			link_to story.title, story_path(story) + tag.br
+			content_tag(:h5, "This team is not currently accepting new members.")
 		end
 	end
 end

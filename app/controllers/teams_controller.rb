@@ -19,7 +19,14 @@ class TeamsController < ApplicationController
 
 	def show
 		@team = Team.find(params[:id])
+		if @team.users.include?(current_user)
+			@stories = @team.stories
+		else
+			@stories = @team.public_stories
+		end
+		@membership = Membership.new
 	end
+
 
 	private
 

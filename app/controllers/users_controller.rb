@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 	end
 
 	def dashboard
+		@teams = current_user.teams
 	end
 
 	private
