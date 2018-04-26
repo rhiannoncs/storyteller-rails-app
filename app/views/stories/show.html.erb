@@ -1,12 +1,12 @@
 <%= content_tag(:h1, @story.title) %>
 <%= content_tag(:h3, "By: #{@story.team_name}") %>
 <%= content_tag(:h4, "Contributors:") %>
-<%= @story.users.each do |user| %>
+<% @story.users.each do |user| %>
 	<%= link_to user.name, user_path(user) %>
 	<%= tag.br %>
 <% end %>
-<%= render(@story.submissions) %>
-<!--<%= @story.submissions.each do |s| %>
-	<%= content_tag(:p, s) %>
-<% end %>-->
-<%= add_submission(@story) %>
+<% @story.submissions.each do |s| %>
+	<%= content_tag(:p, s.content) %>
+<% end %>
+<%= add_submission(@story) %><%= tag.br %>
+<%= edit_story(@story) %>

@@ -1,4 +1,8 @@
 <%= content_tag(:h3, "Recently Updated Stories") %>
+<% @recent.each do |story| %>
+	<%= link_to story.title, story_path(story) %>
+	<%= content_tag(:p, story.description) %>
+<% end %>
 <%= link_to "All Stories", stories_path %><%= tag.br %>
 <%= link_to "Story Mashup" %>
 <p>Random Prompt</p>

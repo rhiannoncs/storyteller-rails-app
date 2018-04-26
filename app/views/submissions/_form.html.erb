@@ -1,4 +1,5 @@
-<%= form_for @submission do |f| %>
+<%= form_for [@story, @submission] do |f| %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
 	<%= f.text_area :content %>
 	<%= f.submit %>
 <% end %>

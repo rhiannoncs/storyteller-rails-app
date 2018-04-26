@@ -20,13 +20,28 @@ class StoriesController < ApplicationController
 
 	def show
 		@story = Story.find(params[:id])
-		redirect_to root_path unless @story.team_members.include?(current_user) | @story.public
+		verify_team_member unless @story.public
+	end
+
+	def edit
+		@story = Story.find(params[:id])
+		verify_team_member
+	end
+
+	def update
+		@story = Story.find(params[:id])
+		@story.update(story_params)
+		redirect_to story_path(@story)
 	end
 
 	private
 	
 	def story_params
 		params.require(:story).permit(:title, :genre, :team_id, :description, :public)
+	end
+
+	def verify_team_member
+		redirect_to root_path unless @story.team_members.include?(current_user)
 	end
 
 

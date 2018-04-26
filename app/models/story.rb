@@ -12,4 +12,6 @@ class Story < ApplicationRecord
 	def team_members
 		team.users
 	end
+
+
 end

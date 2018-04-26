@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 	skip_before_action :verify_user, only: [:welcome]
 
 	def welcome
+		@recent = Submission.recent_stories
 	end
 
 	private
