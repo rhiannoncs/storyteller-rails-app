@@ -5,6 +5,8 @@
 	<%= link_to user.name, user_path(user) %>
 	<%= tag.br %>
 <% end %>
-<%= @story.submissions.each do |s| %>
+<%= render(@story.submissions) %>
+<!--<%= @story.submissions.each do |s| %>
 	<%= content_tag(:p, s) %>
-<% end %>
+<% end %>-->
+<%= add_submission(@story) %>

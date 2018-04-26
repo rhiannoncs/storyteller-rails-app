@@ -9,11 +9,14 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create_omniauth'
 
-  resources :stories, only: [:index, :new, :create, :show]
+  resources :stories, only: [:index, :new, :create, :show] do
+    resources :submissions, only: [:new, :create]
+  end
 
   resources :prompts, only: [:index, :new, :create]
 
   resources :teams, only: [:index, :new, :create, :show]
+
 
   post '/join' => 'memberships#create'
 
