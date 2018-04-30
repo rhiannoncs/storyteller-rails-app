@@ -1,0 +1,5 @@
+<%= content_tag(:h2, @user.name) %>
+<%= content_tag(:p, @user.email) %>
+
+<%= content_tag(:h3, "Stories:") %>
+<%= render(partial: "stories/story", collection: @user.unique_stories) || "This user hasn't contributed to any stories yet." %><%= tag.br %>

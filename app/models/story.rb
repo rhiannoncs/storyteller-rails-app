@@ -13,5 +13,8 @@ class Story < ApplicationRecord
 		team.users
 	end
 
+	def contributors
+		users.uniq
+	end
 
 end
