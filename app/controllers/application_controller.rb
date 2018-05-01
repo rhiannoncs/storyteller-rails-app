@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
 	def welcome
 		@recent = Submission.recent_stories
+		@random_prompt = Prompt.order("RANDOM()").first
 	end
 
 	private

@@ -1,1 +1,4 @@
 <%= content_tag(:h2, "Prompts to Spark Your Creativity") %>
+<% @prompts.each do |prompt| %>
+	<%= content_tag(:p, prompt.content) %>
+<% end %>

@@ -5,5 +5,7 @@
 <% end %>
 <%= link_to "All Stories", stories_path %><%= tag.br %>
 <%= link_to "Story Mashup" %>
-<p>Random Prompt</p>
-<%= link_to "Generate Another Prompt" %>
+
+<%= content_tag(:h3, "Something to Write About:") %>
+<%= content_tag(:p, @random_prompt.content) %>
+<%= link_to "Generate Another Prompt", root_path %>

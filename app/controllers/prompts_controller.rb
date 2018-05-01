@@ -1,7 +1,7 @@
 class PromptsController < ApplicationController
 
 	def index
-		@prompts = Prompt.all
+		@prompts = Prompt.all.reverse
 	end
 	
 	def new
@@ -11,7 +11,7 @@ class PromptsController < ApplicationController
 	def create
 		@prompt = current_user.prompts.build(prompt_params)
 		if @prompt.save
-			redirect_to prompt_path
+			redirect_to prompts_path
 		else
 			render :new
 		end
