@@ -12,5 +12,11 @@ module StoriesHelper
 		end
 	end
 
+	def team_selector(story, f)
+		if story.new_record?
+			f.label :team
+			f.collection_select(:team_id, Team.all, :id, :name, {:prompt => true})
+		end
+	end
 
 end
