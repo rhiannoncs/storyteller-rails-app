@@ -12,4 +12,8 @@ class User < ApplicationRecord
 	def unique_stories
 		stories.uniq
 	end
+
+	def public_stories
+		stories.public.uniq
+	end
 end
