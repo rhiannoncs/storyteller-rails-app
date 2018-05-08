@@ -17,4 +17,8 @@ class Story < ApplicationRecord
 		users.uniq
 	end
 
+	def self.public
+		where(public: true).order(:title)
+	end
+
 end
