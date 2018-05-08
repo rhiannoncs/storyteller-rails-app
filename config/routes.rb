@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create_omniauth'
 
   resources :stories, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :submissions, only: [:new, :create]
+    resources :submissions, only: [:index, :new, :create, :edit, :update]
   end
 
   resources :prompts, only: [:index, :new, :create]

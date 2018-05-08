@@ -7,4 +7,8 @@ class Submission < ApplicationRecord
 	def self.recent_stories
 		last(5).collect{|submission| submission.story}.uniq.reverse
 	end
+
+	def self.by_story_and_user(story_id, user_id)
+		where(story_id: story_id, user_id: user_id)
+	end
 end

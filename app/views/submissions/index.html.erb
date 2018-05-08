@@ -1,0 +1,5 @@
+<%= content_tag(:h1, "Your Submissions to #{@story.title}") %>
+<% @submissions.each do |submission| %>
+	<%= content_tag(:p, submission.content) %>
+	<%= link_to "Edit this Submission", edit_story_submission_path(@story, submission) %>
+<% end %>

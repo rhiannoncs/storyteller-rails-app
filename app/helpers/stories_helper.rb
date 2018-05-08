@@ -8,7 +8,13 @@ module StoriesHelper
 
 	def edit_story(story)
 		if story.team_members.include?(current_user)
-			link_to("Edit Story", edit_story_path(story))
+			link_to("Edit Story Details", edit_story_path(story))
+		end
+	end
+
+	def edit_submissions(story)
+		if story.users.include?(current_user)
+			link_to("Edit Your Contributions", story_submissions_path(story))
 		end
 	end
 
