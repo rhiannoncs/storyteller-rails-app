@@ -2,3 +2,5 @@
 <% @prompts.each do |prompt| %>
 	<%= content_tag(:p, prompt.content) %>
 <% end %>
+<%= tag.br %>
+<%= link_to "Start a New Story", new_story_path %>
