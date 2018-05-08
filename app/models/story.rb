@@ -5,6 +5,8 @@ class Story < ApplicationRecord
 
 	validates :title, presence: true
 
+	scope :public, -> {where(public: true)}
+
 	def team_name
 		team.name
 	end
@@ -17,8 +19,8 @@ class Story < ApplicationRecord
 		users.uniq
 	end
 
-	def self.public
-		where(public: true).order(:title)
+	def self.public_and_alphabetical
+		public.order(:title)
 	end
 
 end
