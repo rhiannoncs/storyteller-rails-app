@@ -25,4 +25,12 @@ module StoriesHelper
 		end
 	end
 
+	def story_status(story)
+		if story.complete
+			"Complete"
+		else
+			"In Progress"
+		end
+	end
+
 end

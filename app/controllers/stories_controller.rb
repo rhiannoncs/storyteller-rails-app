@@ -37,7 +37,7 @@ class StoriesController < ApplicationController
 	private
 	
 	def story_params
-		params.require(:story).permit(:title, :genre, :team_id, :description, :public)
+		params.require(:story).permit(:title, :genre, :team_id, :description, :public, :complete)
 	end
 
 	def verify_team_member
