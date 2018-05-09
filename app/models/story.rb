@@ -5,8 +5,6 @@ class Story < ApplicationRecord
 
 	validates :title, presence: true
 
-	scope :public, -> {where(public: true)}
-
 	def team_name
 		team.name
 	end

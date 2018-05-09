@@ -14,6 +14,6 @@ class User < ApplicationRecord
 	end
 
 	def public_stories
-		stories.public.uniq
+		unique_stories.select {|story| story.public}
 	end
 end
