@@ -8,7 +8,7 @@ class Team < ApplicationRecord
 	scope :open_membership, -> { where(open_membership: true).order(:name)}
 
 	def public_stories
-		stories.where(public: true)
+		stories.public_and_alphabetical
 	end
 
 end
