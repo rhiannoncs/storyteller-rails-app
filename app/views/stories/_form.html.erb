@@ -1,4 +1,5 @@
 <%= form_for @story do |f| %>
+	<%= render partial: "application/errors", locals: {object: @story} %>
 	<%= f.label :title %>
 	<%= f.text_field :title %><%= tag.br%>
 	<%= f.label :genre %>

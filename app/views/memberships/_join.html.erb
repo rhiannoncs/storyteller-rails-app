@@ -1,4 +1,5 @@
 <%= form_for @membership, url: join_path, method: :post do |f| %>
+	<%= render partial: "application/errors", locals: {object: @membership} %>
 	<%= f.hidden_field :team_id, value: team.id %>
 	<%= f.hidden_field :user_id, value: current_user.id %>
 	<%= f.submit "Join Team" %>

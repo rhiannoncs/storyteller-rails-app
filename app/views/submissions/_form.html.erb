@@ -1,4 +1,5 @@
 <%= form_for [@story, @submission] do |f| %>
+	<%= render partial: "application/errors", locals: {object: @submission} %>
 	<%= f.hidden_field :user_id, value: current_user.id %>
 	<%= f.text_area :content %>
 	<%= f.submit %>

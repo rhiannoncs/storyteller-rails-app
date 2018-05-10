@@ -12,13 +12,20 @@ Specs:
 	-Submission.content
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 	-Prompt, Story, Submission, Team, User
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-- [ ] Include signup (how e.g. Devise)
-- [ ] Include login (how e.g. Devise)
-- [ ] Include logout (how e.g. Devise)
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+	-Team.open_membership URL: /teams
+- [x] Include signup (how e.g. Devise)
+	-User Create/Application authenticate methods
+- [x] Include login (how e.g. Devise)
+	-Sessions Controller, Application verify methods
+- [x] Include logout (how e.g. Devise)
+	-Sessions Controller
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+	-OmniAuth
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+	-URL: stories/1/submissions
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+	-URL: stories/1/submissions/new
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
