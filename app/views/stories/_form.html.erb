@@ -13,10 +13,10 @@
 	<%= f.radio_button :public, 'false' %>
 	<%= label :public_false, 'Team Members Only' %><%= tag.br %>
 	<%= f.label :complete? %><%= tag.br %>
-	<%= f.radio_button :public, 'true' %>
-	<%= label :public_true, 'Complete' %>
-	<%= f.radio_button :public, 'false', :checked => true %>
-	<%= label :public_false, 'In Progress' %><%= tag.br %>
+	<%= f.radio_button :complete, 'true' %>
+	<%= label :complete_true, 'Complete' %>
+	<%= f.radio_button :complete, 'false', :checked => true %>
+	<%= label :complete_false, 'In Progress' %><%= tag.br %>
 
 	<%= f.submit %>
 <% end %>
