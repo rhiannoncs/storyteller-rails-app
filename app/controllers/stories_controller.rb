@@ -33,6 +33,10 @@ class StoriesController < ApplicationController
 		@story.update(story_params)
 		redirect_to story_path(@story)
 	end
+	
+	def dusty
+		@stories = Story.dusty_and_open
+	end 
 
 	private
 	

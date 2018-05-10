@@ -29,4 +29,8 @@ class Story < ApplicationRecord
 		in_progress.select{ |story| story.submissions.older.include?(story.last_submission) }
 	end
 
+	def self.dusty_and_open
+		dusty.select{ |story| story.team.open_membership || story.team_members.include?(current_user)}
+	end
+
 end

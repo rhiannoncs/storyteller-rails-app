@@ -2,6 +2,8 @@
 
 <%= content_tag(:h3, "Your Stories") %>
 <%= render(partial: "stories/story", collection: current_user.unique_stories) || "You haven't contributed to any stories yet." %><%= tag.br %>
+
+<%= link_to "Stories in Need of Attention", dusty_stories_path %><%= tag.br %>
 <%= link_to "Start a New Story", new_story_path %><%= tag.br %>
 
 <%= link_to "View Writing Prompts", prompts_path %><%= tag.br %>

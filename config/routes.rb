@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create_omniauth'
 
+  get '/stories/dusty', to: 'stories#dusty', as: :dusty_stories
+
   resources :stories, only: [:index, :new, :create, :show, :edit, :update] do
     resources :submissions, only: [:index, :new, :create, :edit, :update]
   end
