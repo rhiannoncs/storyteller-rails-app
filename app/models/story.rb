@@ -5,7 +5,9 @@ class Story < ApplicationRecord
 
 	validates :title, presence: true
 
-	scope :dusty, -> { where(last_submission.updated_at < 2.days.ago) }
+	scope :in_progress, -> { where(complete: false)}
+
+	scope :public_and_alphabetical, -> { where(public: true).order(:title)}
 
 	def team_name
 		team.name
@@ -23,8 +25,8 @@ class Story < ApplicationRecord
 		submissions.last
 	end
 
-	def self.public_and_alphabetical
-		public.order(:title)
+	def self.dusty
+		in_progress.select{ |story| story.submissions.older.include?(story.last_submission) }
 	end
 
 end

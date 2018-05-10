@@ -4,6 +4,8 @@ class Submission < ApplicationRecord
 
 	validates :content, presence: true, length: {maximum: 2000, too_long: "%{count} characters is the maximum allowed"}
 
+	scope :older, -> { where("updated_at < ?", 2.days.ago) }
+
 	def self.recent_stories
 		last(5).collect{|submission| submission.story}.uniq.reverse
 	end

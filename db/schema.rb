@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_10_122717) do
+ActiveRecord::Schema.define(version: 2018_05_10_131345) do
 
   create_table "memberships", force: :cascade do |t|
     t.integer "user_id"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_05_10_122717) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.boolean "open", default: true
+    t.boolean "open_membership", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

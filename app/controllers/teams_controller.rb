@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
 	def index
-		@teams = Team.where(open: true).order(:name)
+		@teams = Team.open_membership
 	end
 
 	def new
@@ -32,7 +32,7 @@ class TeamsController < ApplicationController
 	private
 
 	def team_params
-		params.require(:team).permit(:name, :open)
+		params.require(:team).permit(:name, :open_membership)
 	end
 
 end

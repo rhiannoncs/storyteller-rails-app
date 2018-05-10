@@ -5,7 +5,10 @@ class Team < ApplicationRecord
 
 	validates :name, presence: true, uniqueness: true
 
+	scope :open_membership, -> { where(open_membership: true).order(:name)}
+
 	def public_stories
 		stories.where(public: true)
 	end
+
 end

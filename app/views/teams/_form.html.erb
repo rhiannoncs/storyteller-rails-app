@@ -2,10 +2,10 @@
 	<%= f.label :name %>
 	<%= f.text_field :name %><%= tag.br%>
 	<%= f.label :membership_status %><%= tag.br %>
-	<%= f.radio_button :open, 'true', :checked => true %>
-	<%= label :open_true, 'Open' %>
-	<%= f.radio_button :open, 'false' %>
-	<%= label :open_false, 'Closed to New Members' %><%= tag.br %>
+	<%= f.radio_button :open_membership, 'true', :checked => true %>
+	<%= label :open_membership_true, 'Open' %>
+	<%= f.radio_button :open_membership, 'false' %>
+	<%= label :open_membership_false, 'Closed to New Members' %><%= tag.br %>
 
 	<%= f.submit %>
 <% end %>
