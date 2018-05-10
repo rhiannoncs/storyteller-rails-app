@@ -25,4 +25,4 @@ Please file an issue on this repository to report any problems. Pull requests ar
 
 ##License
 ***
-This project is licensed under the MIT License - see the [LICENSE.md](..master/LICENSE.md) file for more information.
+This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE.md) file for more information.
