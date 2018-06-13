@@ -2,7 +2,7 @@
 ***
 A collaborative storytelling application, built using Ruby on Rails.  Users can create accounts and teams, join teams that are open for membership and create and edit stories with those teams. Users can also view stories created by others, if the stories are set to "public" and create and view writings prompts for story inspiration.
 
-##Installation Guide
+## Installation Guide
 ***
 To get started, fork and clone this repository. From the file directory, run rake db:migrate, and then bundle install.
 
@@ -19,10 +19,10 @@ Run the application with the command
 thin start --ssl
 ```
 
-##Contributor's Guide
+## Contributor's Guide
 ***
 Please file an issue on this repository to report any problems. Pull requests are welcomed, and may be integrated based on the discretion of the maintainer.
 
-##License
+## License
 ***
 This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE.md) file for more information.
