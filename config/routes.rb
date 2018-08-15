@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/stories/dusty', to: 'stories#dusty', as: :dusty_stories
 
+  get '/stories/:id/silly', to: 'stories#silly', as: :silly
+
   resources :stories, only: [:index, :new, :create, :show, :edit, :update] do
     resources :submissions, only: [:index, :new, :create, :edit, :update]
   end

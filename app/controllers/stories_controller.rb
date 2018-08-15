@@ -36,6 +36,10 @@ class StoriesController < ApplicationController
 	
 	def dusty
 		@stories = Story.dusty_and_open
+	end
+
+	def silly
+		@story = Story.find(params[:id])
 	end 
 
 	private
