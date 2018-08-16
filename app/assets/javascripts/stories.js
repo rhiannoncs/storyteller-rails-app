@@ -1,11 +1,15 @@
 $(document).ready(function() {
 	$(".js-story-details").click(function() {
-		var id = $(this).data("id");
-		$.get(`/stories/${id}/details`, function(data) {
-			$(`#detail-box-${id}`).html(details(data));
-		})
+		show_details(this);
 	})
 })
+
+function show_details(button) {
+	var id = $(button).data("id");
+	$.get(`/stories/${id}/details`, function(data) {
+		$(`#detail-box-${id}`).html(details(data));
+	})
+}
 
 function details(story_data) {
 	let authors = []
