@@ -4,10 +4,10 @@
 	<%= content_tag(:p, story.description) %>
 <% end %>
 
-<%= content_tag(:h3, "All Stories", id: 'all_stories') %>
-<%= button_to "More Stories", id: 'more_stories' %>
 <%= link_to "All Stories", stories_path %><%= tag.br %>
 
 <%= content_tag(:h3, "Something to Write About:") %>
+<div id="random_prompt">
 <%= content_tag(:p, @random_prompt.content) %>
-<%= link_to "Generate Another Prompt", root_path %>
+</div>
+<button id="prompt_generator">Generate Another Prompt</button>

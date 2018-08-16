@@ -1,5 +1,8 @@
 $(document).ready(function() {
-	$("#all_stories").click(function() {
-			alert("you clicked");
-		})
+
+	$("#prompt_generator").click(function() {
+		$.get(`/prompts/random`, function(data) {
+			$("#random_prompt").html(`<p>${data}</p>`)
+		});
+	});
 })

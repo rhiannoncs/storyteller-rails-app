@@ -17,6 +17,11 @@ class PromptsController < ApplicationController
 		end
 	end
 
+	def random
+		prompt = Prompt.order("RANDOM()").first
+		render plain: prompt.content
+	end
+
 	private
 
 	def prompt_params
