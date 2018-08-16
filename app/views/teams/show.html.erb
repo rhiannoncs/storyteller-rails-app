@@ -2,5 +2,8 @@
 <% @stories.each do |story| %>
 	<%= link_to story.title, story_path(story) %>
 	<%= tag.br %>
+	<%= button_tag "See Story", class: "js-story", data: {id: story.id} %>
+	<%= tag.br %>
 <% end %>
+
 <%= join_team(@team) %>

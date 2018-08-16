@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#title").click(function() {
-			alert("you clicked");
-		})
+	$(".js-story").click(function(data) {
+		alert(data);
+	})
 })
