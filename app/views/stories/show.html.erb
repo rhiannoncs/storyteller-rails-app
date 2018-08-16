@@ -1,4 +1,4 @@
-<%= content_tag(:h1, @story.title) %>
+<%= content_tag(:h1, @story.title, id: "title") %>
 <%= link_to team_path(@story.team) do %>
 	<%= content_tag(:h3, "By: #{@story.team_name}") %>
 <% end %>

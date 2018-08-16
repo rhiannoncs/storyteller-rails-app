@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-	skip_before_action :verify_user, only: [:new, :create, :create_omniauth]
+	skip_before_action :verify_user, only: [:create, :create_omniauth]
 
-	def new
-	end
+	#def new
+	#end
 
 	def create
 		@user = User.find_by(email: params[:email])
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 			redirect_to dashboard_path(@user)
 		else
 			flash[:error] = "Invalid email/password combination."
-			render :new
+			redirect_to root_path
 		end
 	end
 
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session.delete :user_id
-		redirect_to login_path
+		redirect_to root_path
 	end
 
 	private

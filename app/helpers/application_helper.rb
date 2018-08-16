@@ -8,7 +8,7 @@ module ApplicationHelper
 		else
 			link_to("Sign Up", new_user_path) +
 			' ' +
-			link_to("Log In", login_path)
+			(render partial: "sessions/form")
 		end
 	end
 end

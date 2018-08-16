@@ -3,6 +3,9 @@
 	<%= link_to story.title, story_path(story) %>
 	<%= content_tag(:p, story.description) %>
 <% end %>
+
+<%= content_tag(:h3, "All Stories", id: 'all_stories') %>
+<%= button_to "More Stories", id: 'more_stories' %>
 <%= link_to "All Stories", stories_path %><%= tag.br %>
 
 <%= content_tag(:h3, "Something to Write About:") %>
