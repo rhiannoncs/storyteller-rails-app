@@ -19,7 +19,7 @@ class PromptsController < ApplicationController
 
 	def random
 		prompt = Prompt.order("RANDOM()").first
-		render plain: prompt.content
+		render json: prompt
 	end
 
 	private
