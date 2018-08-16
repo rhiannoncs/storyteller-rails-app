@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/stories/:id/silly', to: 'stories#silly', as: :silly
 
+  get '/stories/:id/details', to: 'stories#details'
+
   get '/prompts/random', to: 'prompts#random'
 
   resources :stories, only: [:index, :new, :create, :show, :edit, :update] do

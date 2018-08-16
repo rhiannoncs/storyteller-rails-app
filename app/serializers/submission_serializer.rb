@@ -1,3 +1,3 @@
 class SubmissionSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :content
 end
