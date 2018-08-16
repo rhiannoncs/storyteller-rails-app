@@ -4,6 +4,8 @@
 	<%= tag.br %>
 	<%= button_tag "Story Details", class: "js-story-details", data: {id: story.id} %>
 	<%= tag.br %>
+	<div id="detail-box-<%= story.id %>">
+	</div>
 <% end %>
 
 <%= join_team(@team) %>
