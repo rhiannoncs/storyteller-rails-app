@@ -1,4 +1,5 @@
 class PromptsController < ApplicationController
+	skip_before_action :verify_user, only: [:random]
 
 	def index
 		@prompts = Prompt.all.reverse
