@@ -29,6 +29,10 @@ class Story < ApplicationRecord
 		submissions
 	end
 
+	def next
+		find(self.id + 1)
+	end
+
 	def self.dusty
 		in_progress.select{ |story| story.submissions.older.include?(story.last_submission) }
 	end

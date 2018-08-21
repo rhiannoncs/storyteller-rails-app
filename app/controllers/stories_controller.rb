@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-	skip_before_action :verify_user, only: [:index, :show]
+	skip_before_action :verify_user, only: [:index, :show, :details]
 
 	def index
 		@stories = Story.public_and_alphabetical
