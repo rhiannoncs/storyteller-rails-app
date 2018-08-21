@@ -30,7 +30,7 @@ class Story < ApplicationRecord
 	end
 
 	def next
-		find(self.id + 1)
+		Story.find(self.id + 1)
 	end
 
 	def self.dusty

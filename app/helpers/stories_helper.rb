@@ -35,7 +35,7 @@ module StoriesHelper
 
 	def next_story(story)
 		if story.public
-			link_to("Next Story", root_path, class: "js-next-story", data: {id: story.id})
+			link_to("Next Story", '#', class: "js-next-story", data: {id: story.id})
 		else
 			next_story(story.next)
 		end
