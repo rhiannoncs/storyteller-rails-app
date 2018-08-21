@@ -3,13 +3,17 @@
 	<%= content_tag(:h3, "By: #{@story.team_name}") %>
 <% end %>
 <%= content_tag(:h4, "Status: #{story_status(@story)}", class: "story_status") %>
-<%= content_tag(:h4, "Contributors:", class: "story_contributors") %>
-<% @story.contributors.each do |user| %>
-	<%= link_to user.name, user_path(user) %>
-	<%= tag.br %>
+<%= content_tag(:h4, "Contributors:") %>
+<%= content_tag :div, class: "story_contributors" do %>
+	<% @story.contributors.each do |user| %>
+		<%= link_to user.name, user_path(user) %>
+		<%= tag.br %>
+	<% end %>
 <% end %>
-<% @story.submissions.each do |s| %>
-	<%= content_tag(:p, s.content, class: "story_content") %>
+<%= content_tag :div, class: "story_content" do %>
+	<% @story.submissions.each do |s| %>
+		<%= content_tag(:p, s.content) %>
+	<% end %>
 <% end %>
 
 <%= next_story(@story.next) %><%= tag.br %>
