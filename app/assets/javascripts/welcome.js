@@ -8,6 +8,7 @@ $(document).ready(function() {
 	});
 })
 
-function Prompt(content) {
+function Prompt(id, content) {
+	this.id = id;
 	this.content = content;
 }
