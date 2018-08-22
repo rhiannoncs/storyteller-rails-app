@@ -9,6 +9,8 @@ class Story < ApplicationRecord
 
 	scope :public_and_alphabetical, -> { where(public: true).order(:title)}
 
+	scope :public_and_numerical, -> { where(public: true)}
+
 	def team_name
 		team.name
 	end
@@ -29,8 +31,13 @@ class Story < ApplicationRecord
 		submissions
 	end
 
-	def next
-		Story.find(self.id + 1)
+	def next_public
+		if Story.public_and_numerical.last == self
+			return Story.public_and_numerical.first
+		else
+			story = Story.public_and_numerical.find_by "id > ?", self.id
+			return story
+		end
 	end
 
 	def self.dusty

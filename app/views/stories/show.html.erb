@@ -16,7 +16,7 @@
 	<% end %>
 <% end %>
 
-<%= next_story(@story.next) %><%= tag.br %>
+<%= link_to("Next Story", '#', class: "js-next-story", data: {id: @story.next_public.id}) %><%= tag.br %>
 <%= add_submission(@story) %><%= tag.br %>
 <%= edit_story(@story) %><%= tag.br %>
 <%= edit_submissions(@story) %>

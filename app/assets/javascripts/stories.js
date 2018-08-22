@@ -19,25 +19,25 @@ function show_details(button) {
 function show_story(link) {
 	var id = $(link).data("id");
 	$.get(`/stories/${id}/details`, function(data) {
-		let story = new Story(data["id"], data["title"], data["genre"], data["description"], data["team"], data["next"],
+		let story = new Story(data["id"], data["title"], data["genre"], data["description"], data["team"], data["next_public"],
 			data["contributors"], data["submissions"]);
 		$(".story_title").text(story.title);
 		$(".story_team").html(`<h3><a href="/teams/${story.team.id}">By: ${story.team.name}</a></h3>`);
 		$(".story_status").text("Status: ");
 		$(".story_contributors").html(story.contributor_details());
 		$(".story_content").html(story.content());
-		$(".js-next-story").data("id", story.find_next_story());
+		$(".js-next-story").data("id", story.next_public.id);
 
 	})
 }
 
-function Story(id, title, genre, description, team, next, contributors, submissions) {
+function Story(id, title, genre, description, team, next_public, contributors, submissions) {
 	this.id = id;
 	this.title = title;
 	this.genre = genre;
 	this.description = description;
 	this.team = team;
-	this.next = next;
+	this.next_public = next_public;
 	this.contributors = contributors;
 	this.submissions = submissions;
 }
@@ -68,12 +68,3 @@ Story.prototype.content = function() {
 	return content;
 }
 
-Story.prototype.find_next_story = function() {
-	let id;
-	if (this.next.public) {
-		id = this.next.id
-	} else {
-		id = this.next.next_story();
-	}
-	return id; 
-}
