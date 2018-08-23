@@ -6,7 +6,7 @@ Specs:
 - [x] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
 	- Rendering public stories with jQuery and AMS JSON.  See show_story() in stories.js.
 - [x] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
-	- Index of stories on the team show page loads story detials using jQuery and AMS JSON.  See show_details() in stories.js.
+	- Prompts index renders on the user dashboard using jQuery and AMS JSON.  See prompts.js.
 - [x] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
 	- A story has many contributors and submissions.  See show_story() in stories.js and story_serializer.
 - [x] Use your Rails API and a form to create a resource and render the response without a page refresh.
