@@ -6,7 +6,7 @@ $(document).ready(function() {
 		let posting = $.post(`/stories/${story_id}/submissions`, values);
 
 		posting.done(function(data) {
-			$("#story_content").append(data["content"]);
+			$("#story_content").append(`<p>${data["content"]}</p>`);
 			$("#submission_content").val('');
 		});
 	});

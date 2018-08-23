@@ -3,5 +3,5 @@
 	<%= f.hidden_field :user_id, value: current_user.id %>
 	<%= f.hidden_field :story_id, value: @story.id %>
 	<%= f.text_area :content %>
-	<%= f.submit "Add to Story" %>
+	<%= f.submit "Add to Story", data: { disable_with: false } %>
 <% end %>
