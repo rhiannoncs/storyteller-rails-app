@@ -16,5 +16,6 @@
 //= require welcome
 //= require stories
 //= require submissions
+//= require prompts
 //= require_tree
 

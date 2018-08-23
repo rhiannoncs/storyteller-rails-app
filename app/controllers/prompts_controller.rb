@@ -2,7 +2,8 @@ class PromptsController < ApplicationController
 	skip_before_action :verify_user, only: [:random]
 
 	def index
-		@prompts = Prompt.all.reverse
+		prompts = Prompt.all.reverse
+		render json: prompts
 	end
 	
 	def new

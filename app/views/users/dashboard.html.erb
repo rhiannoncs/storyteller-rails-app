@@ -6,7 +6,8 @@
 <%= link_to "Stories in Need of Attention", dusty_stories_path %><%= tag.br %>
 <%= link_to "Start a New Story", new_story_path %><%= tag.br %>
 
-<%= link_to "View Writing Prompts", prompts_path %><%= tag.br %>
+<%= button_tag "Show Writing Prompts", class: "js-prompts" %><%= tag.br %>
+<div id="prompt_box"></div>
 <%= link_to "Submit a Prompt", new_prompt_path %><%= tag.br %>
 
 <%= content_tag(:h3, "Your Teams") %>

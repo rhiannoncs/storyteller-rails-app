@@ -7,8 +7,3 @@ $(document).ready(function() {
 		});
 	});
 })
-
-function Prompt(id, content) {
-	this.id = id;
-	this.content = content;
-}
