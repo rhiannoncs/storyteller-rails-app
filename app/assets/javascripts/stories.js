@@ -11,7 +11,8 @@ $(document).ready(function() {
 function show_details(button) {
 	var id = $(button).data("id");
 	$.get(`/stories/${id}/details`, function(data) {
-		let story = new Story(data["id"], data["title"], data["genre"], data["description"], data["contributors"]);
+		let story = new Story(data["id"], data["title"], data["genre"], data["description"], data["team"], data["next_public"], 
+			data["contributors"], data["submissions"]);
 		$(`#detail-box-${id}`).html(story.details());
 	})
 }
@@ -25,7 +26,7 @@ function show_story(link) {
 		$(".story_team").html(`<h3><a href="/teams/${story.team.id}">By: ${story.team.name}</a></h3>`);
 		$(".story_status").text("Status: ");
 		$(".story_contributors").html(story.contributor_details());
-		$(".story_content").html(story.content());
+		$("#story_content").html(story.content());
 		$(".js-next-story").data("id", story.next_public.id);
 
 	})

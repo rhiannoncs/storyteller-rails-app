@@ -20,6 +20,7 @@ class StoriesController < ApplicationController
 
 	def show
 		@story = Story.find(params[:id])
+		@submission = Submission.new
 		verify_team_member unless @story.public
 	end
 

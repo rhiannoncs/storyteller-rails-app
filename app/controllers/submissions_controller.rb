@@ -5,16 +5,11 @@ class SubmissionsController < ApplicationController
 		@submissions = Submission.by_story_and_user(params[:story_id], session[:user_id])
 	end
 
-	def new
-		@submission = Submission.new
-		@story = Story.find(params[:story_id])
-	end
-
 	def create
 		@story = Story.find(params[:story_id])
 		@submission = @story.submissions.build(submission_params)
 		if @submission.save
-			redirect_to story_path(@story)
+			render json: @submission, status: 201
 		else
 			render :new
 		end

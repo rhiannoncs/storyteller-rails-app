@@ -10,13 +10,14 @@
 		<%= tag.br %>
 	<% end %>
 <% end %>
-<%= content_tag :div, class: "story_content" do %>
+<%= content_tag :div, id: "story_content" do %>
 	<% @story.submissions.each do |s| %>
 		<%= content_tag(:p, s.content) %>
 	<% end %>
 <% end %>
 
-<%= link_to("Next Public Story", '#', class: "js-next-story", data: {id: @story.next_public.id}) %><%= tag.br %>
+
 <%= add_submission(@story) %><%= tag.br %>
 <%= edit_story(@story) %><%= tag.br %>
-<%= edit_submissions(@story) %>
+<%= edit_submissions(@story) %><%= tag.br %>
+<%= link_to("Next Public Story", '#', class: "js-next-story", data: {id: @story.next_public.id}) %>

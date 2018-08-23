@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/prompts/random', to: 'prompts#random'
 
   resources :stories, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :submissions, only: [:index, :new, :create, :edit, :update]
+    resources :submissions, only: [:index, :create, :edit, :update]
   end
 
   resources :prompts, only: [:index, :new, :create]
