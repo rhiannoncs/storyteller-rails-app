@@ -19,18 +19,21 @@ function show_details(button) {
 
 function show_story(link) {
 	var id = $(link).data("id");
-	$.get(`/stories/${id}/details`, function(data) {
-		let story = new Story(data["id"], data["title"], data["genre"], data["description"], data["team"], data["next_public"],
-			data["contributors"], data["submissions"]);
-		$(".story_title").text(story.title);
-		$(".story_team").html(`<h3><a href="/teams/${story.team.id}">By: ${story.team.name}</a></h3>`);
-		$(".story_status").text("Status: ");
-		$(".story_contributors").html(story.contributor_details());
-		$("#story_content").html(story.content());
-		$(".js-next-story").data("id", story.next_public.id);
-		$("#new_submission").empty();
+	fetch(`/stories/${id}/details`)
+		.then((response) => response.json())
+		.then(function(data) {
+			let story = new Story(data["id"], data["title"], data["genre"], data["description"], data["team"], data["next_public"],
+				data["contributors"], data["submissions"]);
+			$(".story_title").text(story.title);
+			$(".story_team").html(`<h3><a href="/teams/${story.team.id}">By: ${story.team.name}</a></h3>`);
+			$(".story_status").text("Status: ");
+			$(".story_contributors").html(story.contributor_details());
+			$("#story_content").html(story.content());
+			$(".js-next-story").data("id", story.next_public.id);
+			$("#new_submission").empty();
 
 	})
+		
 }
 
 class Story {
