@@ -10,7 +10,9 @@ $(document).ready(function() {
 
 function show_details(button) {
 	var id = $(button).data("id");
-	$.get(`/stories/${id}/details`, function(data) {
+	fetch(`/stories/${id}/details`)
+		.then((response) => response.json())
+		.then(function(data) {
 		let story = new Story(data["id"], data["title"], data["genre"], data["description"], data["team"], data["next_public"], 
 			data["contributors"], data["submissions"]);
 		$(`#detail-box-${id}`).html(story.details());
