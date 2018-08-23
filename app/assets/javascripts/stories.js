@@ -28,11 +28,13 @@ function show_story(link) {
 		$(".story_contributors").html(story.contributor_details());
 		$("#story_content").html(story.content());
 		$(".js-next-story").data("id", story.next_public.id);
+		$("#new_submission").empty();
 
 	})
 }
 
-function Story(id, title, genre, description, team, next_public, contributors, submissions) {
+class Story {
+	constructor (id, title, genre, description, team, next_public, contributors, submissions) {
 	this.id = id;
 	this.title = title;
 	this.genre = genre;
@@ -41,31 +43,32 @@ function Story(id, title, genre, description, team, next_public, contributors, s
 	this.next_public = next_public;
 	this.contributors = contributors;
 	this.submissions = submissions;
-}
+	}
 
-Story.prototype.details = function() {
-	let authors = [];
-	this.contributors.forEach(function(contributor) {
+	details() {
+		let authors = [];
+		this.contributors.forEach(function(contributor) {
 		authors.push(contributor.name);
-	})
-	let details = `<strong>Genre:</strong> ${this.genre}<br><strong>Description:</strong> ${this.description}<br>
-	<strong>Contributors:</strong> ${authors}`;
-	return details
-}
+		})
+		let details = `<strong>Genre:</strong> ${this.genre}<br><strong>Description:</strong> ${this.description}<br>
+		<strong>Contributors:</strong> ${authors}`;
+		return details
+	}
 
-Story.prototype.contributor_details = function() {
-	let contributor_details = "";
-	this.contributors.forEach(function(contributor) {
-		contributor_details += `<a href="/users/${contributor.id}">${contributor.name}</a><br>`
-	})
-	return contributor_details
-}
+	contributor_details() {
+		let contributor_details = "";
+		this.contributors.forEach(function(contributor) {
+			contributor_details += `<a href="/users/${contributor.id}">${contributor.name}</a><br>`
+		})
+		return contributor_details
+	}
 
-Story.prototype.content = function() {
-	let content = "";
-	this.submissions.forEach(function(submission) {
-		content += `<p>${submission.content}</p>`
-	})
-	return content;
+	content() {
+		let content = "";
+		this.submissions.forEach(function(submission) {
+			content += `<p>${submission.content}</p>`
+		})
+		return content;
+		}
 }
 

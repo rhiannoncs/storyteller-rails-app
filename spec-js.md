@@ -14,7 +14,7 @@ Specs:
 - [x] Translate JSON responses into js model objects.
 	- Responses are turned into Story objects.  See stories.js.
 - [x] At least one of the js model objects must have at least one method added by your code to the prototype.
-	- Story.prototype.details(), Story.prototype.contributor_details(), Story.prototype.content() in stories.js.
+	- Story.details(), Story.contributor_details(), Story.content() in stories.js.
 
 Confirm
 - [x] You have a large number of small Git commits
